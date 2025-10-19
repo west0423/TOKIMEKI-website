@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOKIMEKI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <h1>TOKIMEKI</h1>
+            <nav>
+              <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li>
+                  <a href="tokimeki.html">TOKIMEKI</a>
+                  <ul class="dropdown">
+                    <li><a href="morning.html">morning</a></li>
+                    <li><a href="daytime.html">daytime</a></li>
+                    <li><a href="night.html">night</a></li>
+                  </ul>
+                </li>
+                <li><a href="about.html">ABOUT</a></li>
+              </ul>
+            </nav>
+            
+            
+            
+            <div class="main-visual">
+                <img src="images/main-visual.png" alt="メインビジュアル">
+              </div>
+        </header>
+    
+        <main>
+          <section id="about" class="about-section">
+            <h2>about</h2>
+            <p>
+              <strong>TOKIMEKI</strong>は、自分らしい生活リズムを取り戻すために、<br>
+              「朝・昼・夜」という時間帯に注目し、それぞれの時間に合わせた<br>
+              “すぐ始められる小さな趣味”を紹介するサイトです。<br>
+            </p>
+
+            <div class="profile">
+              <div class="profile-img">
+                <img src="images/profile.png" alt="プロフィール写真">
+              </div>
+              <div class="profile-text">
+                <h3>Akari</h3>
+                <p>
+                  ドライヤー時間のYouTube鑑賞がすき。<br>
+                  “無理せず続けられる小さな楽しみ”をテーマに、<br>
+                  心がふっと軽くなる時間の過ごし方を発信しています。
+                </p>
+              </div>
+            </div>
+          </section>
+          
+          <section>
+            <h2>article02</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, explicabo quisquam eligendi fugiat ad fuga, vero! Esse fuga ex, asperiores quisquam consequatur, velit architecto nostrum modi, sunt autem similique rerum.</p>
+          </section>
+          <section>
+            <div class="container">
+                <div class="column-img">
+                  <img src="images/square.png" alt="">
+                </div>
+                <div class="column-text">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, explicabo quisquam eligendi fugiat ad fuga, vero! Esse fuga ex, asperiores quisquam consequatur, velit architecto nostrum modi, sunt autem similique rerum.</p>
+                </div>
+              </div>
+          </section>
+        </main>
+    
+        <footer>
+            <p>&copy; SampleSite </p>
+        </footer>
+      </div><!-- #wrap-->  
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // サブメニューを持つ要素を取得
+          const subMenus = document.querySelectorAll('nav li.has-submenu > a');
+        
+          subMenus.forEach(link => {
+            link.addEventListener('click', function(e) {
+              // タップした時にリンク先へ飛ばずメニューを開く
+              const parentLi = this.parentElement;
+        
+              // すでに開いている場合は閉じる
+              if (parentLi.classList.contains('active')) {
+                parentLi.classList.remove('active');
+              } else {
+                // 他を閉じてから自分を開く
+                document.querySelectorAll('nav li.active').forEach(li => li.classList.remove('active'));
+                parentLi.classList.add('active');
+              }
+        
+              // スマホではリンク先に飛ばないようにする
+              if (window.innerWidth < 1024) {
+                e.preventDefault();
+              }
+            });
+          });
+        });
+        </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("fade-in");
+  });
+  </script>
+  
+
+</body>
+</html>
