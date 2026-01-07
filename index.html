@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOKIMEKI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+    <div id="wrap">
+<header>
+        <a href="index.html">
+        <h1>TOKIMEKI</h1>
+      </a>
+            <nav>
+              <ul>
+              　<li><a href="morning.html">Morning</a></li>
+                <li><a href="daytime.html">Daytime</a></li>
+                <li><a href="night.html">Night</a></li>
+              </ul>
+            </nav>
+            
+            
+            
+<div class="main-visual-flow">
+<!-- 1列目：朝（右 → 左） -->
+  <div class="flow-row morning">
+    <div class="flow-track">
+      <img src="images/morning01.jpg" alt="">
+      <img src="images/morning02.jpg" alt="">
+      <img src="images/morning03.jpg" alt="">
+      <img src="images/morning04.jpg" alt="">
+      <img src="images/morning05.jpg" alt="">
+      <!-- ★ 複製 -->
+    <img src="images/morning01.jpg" alt="">
+    <img src="images/morning02.jpg" alt="">
+    <img src="images/morning03.jpg" alt="">
+    <img src="images/morning04.jpg" alt="">
+    <img src="images/morning05.jpg" alt="">
+  </div>
+    </div>
+  </div>
+
+  <!-- 2列目：昼（左 → 右） -->
+  <div class="flow-row daytime">
+    <div class="flow-track reverse">
+      <img src="images/daytime01.jpg" alt="">
+      <img src="images/daytime02.jpg" alt="">
+      <img src="images/daytime03.jpg" alt="">
+      <img src="images/daytime04.jpg" alt="">
+      <img src="images/daytime05.jpg" alt="">
+      <!-- ★ 複製 -->
+      <img src="images/daytime01.jpg" alt="">
+      <img src="images/daytime02.jpg" alt="">
+      <img src="images/daytime03.jpg" alt="">
+      <img src="images/daytime04.jpg" alt="">
+      <img src="images/daytime05.jpg" alt="">
+    </div>
+  </div>
+
+  <!-- 3列目：夜（右 → 左） -->
+  <div class="flow-row night">
+    <div class="flow-track">
+      <img src="images/night01.jpg" alt="">
+      <img src="images/night02.jpg" alt="">
+      <img src="images/night03.jpg" alt="">
+      <img src="images/night04.jpg" alt="">
+      <img src="images/night05.jpg" alt="">
+      <!-- ★ 複製 -->
+      <img src="images/night01.jpg" alt="">
+      <img src="images/night02.jpg" alt="">
+      <img src="images/night03.jpg" alt="">
+      <img src="images/night04.jpg" alt="">
+      <img src="images/night05.jpg" alt="">
+  　 </div>
+　</div>
+</div>
+</header>
+    
+        <main>
+          <section id="about" class="about-section">
+            <h2>about</h2>
+            <p>
+              <strong>TOKIMEKI</strong>は、自分らしい生活リズムを取り戻すために、<br>
+              「朝・昼・夜」という時間帯に注目し、それぞれの時間に合わせた<br>
+              “すぐ始められる小さな趣味習慣”を紹介するサイトです。<br>
+            </p>
+
+            <div class="profile">
+              <div class="profile-img">
+                <img src="images/profile.jpg" alt="プロフィール写真">
+              </div>
+              <div class="profile-text">
+                <h3>Akari</h3>
+                <p>
+                  ドライヤー時間のYouTube視聴がすき。<br>
+                  “無理せず続けられる趣味習慣”をテーマに、<br>
+                  生活リズムを取り戻す時間の過ごし方を発信しています。
+                </p>
+              </div>
+            </div>
+          </section>
+          
+         
+          <section class="search-section">
+            <h2>search</h2>
+            <ul>
+            <li><a href="morning.html">Morning</a></li>
+            <li><a href="daytime.html">daytime</a></li>
+            <li><a href="night.html">night</a></li>
+          </ul>
+          </section>
+        </main>
+    
+        <footer>
+            <p>&copy; SampleSite </p>
+        </footer>
+      </div><!-- #wrap-->  
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // サブメニューを持つ要素を取得
+          const subMenus = document.querySelectorAll('nav li.has-submenu > a');
+        
+          subMenus.forEach(link => {
+            link.addEventListener('click', function(e) {
+              // タップした時にリンク先へ飛ばずメニューを開く
+              const parentLi = this.parentElement;
+        
+              // すでに開いている場合は閉じる
+              if (parentLi.classList.contains('active')) {
+                parentLi.classList.remove('active');
+              } else {
+                // 他を閉じてから自分を開く
+                document.querySelectorAll('nav li.active').forEach(li => li.classList.remove('active'));
+                parentLi.classList.add('active');
+              }
+        
+              // スマホではリンク先に飛ばないようにする
+              if (window.innerWidth < 1024) {
+                e.preventDefault();
+              }
+            });
+          });
+        });
+        </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("fade-in");
+  });
+  </script>
+  
+
+</body>
+</html>
